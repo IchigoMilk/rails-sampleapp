@@ -3,3 +3,8 @@ honoka:
   name: Honoka Yukishiro
   email: precure@white.com
   password_digest: <%= User.digest('password') %>
+
+nagisa:
+  name: Nagisa Misumi
+  email: precure@black.com
+  password_digest: <%= User.digest('password') %>
