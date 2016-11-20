@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.0'
 # To use secure password
 gem 'bcrypt'
+gem 'faker'
 gem 'bootstrap-sass'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
