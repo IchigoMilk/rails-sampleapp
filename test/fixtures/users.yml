@@ -3,6 +3,7 @@ honoka:
   name: Honoka Yukishiro
   email: precure@white.com
   password_digest: <%= User.digest('password') %>
+  admin: true
 
 nagisa:
   name: Nagisa Misumi
