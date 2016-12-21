@@ -83,4 +83,14 @@ class UserTest < ActiveSupport::TestCase
       @user.destroy
     end
   end
+
+  test "should follow and unfollow a user" do
+    honoka = users(:honoka)
+    hikari = users(:hikari)
+    assert_not honoka.following?(hikari)
+    honoka.follow(hikari)
+    assert honoka.following?(hikari)
+    honoka.unfollow(hikari)
+    assert_not honoka.following?(hikari)
+  end
 end
