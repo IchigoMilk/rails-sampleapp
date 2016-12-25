@@ -90,6 +90,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not honoka.following?(hikari)
     honoka.follow(hikari)
     assert honoka.following?(hikari)
+    assert hikari.followers.include?(honoka)
     honoka.unfollow(hikari)
     assert_not honoka.following?(hikari)
   end
