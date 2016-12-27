@@ -1,1 +1,15 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+one:
+  follower: nozomi
+  followed: urara
+
+two:
+  follower: nozomi
+  followed: milk
+
+three:
+  follower: urara
+  followed: nozomi
+
+one:
+  follower: milk
+  followed: nozomi

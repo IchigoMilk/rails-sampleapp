@@ -21,6 +21,30 @@ hikari:
   activated: false
   activated_at: nil
 
+nozomi:
+  name: Nozomi Yumehara
+  email: precure@dream.com
+  password_digest: <%= User.digest('password') %>
+  admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+urara:
+  name: Urara Kasugano
+  email: precure@lemonade.com
+  password_digest: <%= User.digest('password') %>
+  admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+milk:
+  name: Kurumi Mimino
+  email: milky@rose.com
+  password_digest: <%= User.digest('password') %>
+  admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
 <% 30.times do |n| %>
 user_<%= n %>:
   name: <%= "User #{n}" %>
