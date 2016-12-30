@@ -55,4 +55,13 @@ class FollowingTest < ActionDispatch::IntegrationTest
       delete relationship_path(relationship), xhr: true
     end
   end
+
+  test "feed on Home page" do
+    get root_path
+    @user.follow(@other) if @user.following.find_by(id: @other).nil?
+    assert @user.following?(@other)
+    @user.feed.paginate(page: 1).each do |micropost|
+      # TODO: cannot reach here :/
+    end
+  end
 end
