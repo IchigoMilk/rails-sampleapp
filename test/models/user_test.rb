@@ -94,4 +94,22 @@ class UserTest < ActiveSupport::TestCase
     honoka.unfollow(hikari)
     assert_not honoka.following?(hikari)
   end
+
+  test "feed should have the right posts" do
+    nozomi = users(:nozomi)
+    urara  = users(:urara)
+    karen  = users(:karen)
+    # フォローしているユーザの投稿を確認
+    nozomi.microposts.each do |post_following|
+      assert urara.feed.include?(post_following)
+    end
+    # 自分自身の投稿を確認
+    nozomi.microposts.each do |post_self|
+      assert nozomi.feed.include?(post_self)
+    end
+    # フォローしていないユーザの投稿を確認
+    karen.microposts.each do |post_unfollowed|
+      assert_not nozomi.feed.include?(post_unfollowed)
+    end
+  end
 end

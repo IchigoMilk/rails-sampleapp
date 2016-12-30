@@ -13,3 +13,7 @@ three:
 four:
   follower: milk
   followed: nozomi
+
+five:
+  follower: karen
+  followed: milk
