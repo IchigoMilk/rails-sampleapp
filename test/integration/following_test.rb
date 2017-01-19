@@ -61,7 +61,7 @@ class FollowingTest < ActionDispatch::IntegrationTest
     @user.follow(@other) if @user.following.find_by(id: @other).nil?
     assert @user.following?(@other)
     @user.feed.paginate(page: 1).each do |micropost|
-      # TODO: cannot reach here :/
+      assert_match CGI.escapeHTML(micropost.content), response.body
     end
   end
 end
